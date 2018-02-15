@@ -1,0 +1,183 @@
+body {
+    background-color: #496d5a;
+}
+
+.App {
+  text-align: center;
+}
+
+
+/* UI Elements */
+.controlFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.pointDiv {
+    top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 40px;
+    background-color: dodgerblue;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 0 0 50% 50%;
+}
+
+.dodgeBut {
+    width: 100px;
+    height: 100px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.dodgeBut:active {
+    background-color: skyblue;
+}
+
+.buyTest {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.pause {
+      width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*Monster image css*/
+
+.monster-image {
+    position: absolute;
+    width: 353px;
+    height: 353px;
+    top: 17%;
+    left:3%;
+    background-color:blue;
+    background: url('img/MonkeySpSh.png') left center;
+    animation: none;
+    pointer-events: auto;
+}
+
+.monsterPause {
+    animation: none;
+}
+
+/*monster image purchase*/
+
+.testGorilla {
+    background: url('img/monkeyman2.png') left center;
+}
+
+/*Player image css*/
+.char-image {
+    position: absolute;
+    width: 200px;
+    height:200px;
+    top: 45%;
+    left: 24%;
+     background: url('img/punchlady3.png') left center;
+    animation: playerIdle 0.6s steps(9) infinite;
+    pointer-events: auto;
+}
+
+.charPause {
+    animation: none
+}
+
+
+/* Monster Hit Animations */
+
+@keyframes gorillaAni {
+    1% {background-position: -0px 0px;}
+100% {background-position: -1765px 0px;}
+}
+
+@keyframes gorillaPunch {
+    1% {background-position: -0px -353px;}
+    40% {background-position: -1765px -353px;}
+    40.01% {background-position: -0px -706px;}
+    60.01% {background-position: -0px -706px;}
+    100% {background-position: -1765px -706px;}
+}
+
+.active {
+    animation: gorillaAni 0.2s steps(5) forwards;
+    pointer-events: none;
+    filter: brightness(105%);
+}
+
+.activeGPunch {
+    animation: gorillaPunch 0.8s steps(5) forwards;
+    pointer-events: none;
+}
+
+/*player punch animations */
+
+.activePlayer1 {
+    animation: playerPunch1 0.2s steps(4) infinite;
+    pointer-events: none;
+}
+
+.activePlayer2 {
+    animation: playerPunch2 0.2s steps(6) infinite;
+    pointer-events: none;
+}
+
+.activePlayer3 {
+    animation: playerDodge 0.6s steps(1) infinite;
+    pointer-events: none;
+}
+
+@keyframes playerIdle {
+    1%{background-position: -0px -0px}
+    72%{background-position: -1800px -0px}
+    72.01%{animation: playerIdle steps(5);
+        background-position: -0px -200px}
+    100%{animation: playerIdle steps(5);
+        background-position: -1000px -200px}
+}
+
+@keyframes playerPunch1 {
+    0.01%{animation: playerIdle steps(4);
+        background-position: -1000px -200px;}
+    66%{animation: playerIdle steps(4);
+        background-position: -1800px -200px;}
+    66.01%{animation: playerIdle steps(2);
+        background-position: -0px -400px;}
+    100%{animation: playerIdle steps(2);
+        background-position: -400px -400px;}
+}
+
+@keyframes playerPunch2 {
+    1%{animation: playerIdle steps(6);
+        background-position: -400px -400px;}
+    100%{animation: playerIdle steps(6);
+        background-position: -1600px -400px;} 
+}
+
+@keyframes playerDodge {
+     0.01%{animation: steps(9);
+        background-position: -0px -600px;}
+    4.1%{animation: steps(9);
+        background-position: -0px -600px;}
+    83%{animation: steps(9);
+        background-position: -1800px -600px;}
+    83.1%{animation: steps(2);
+        background-position: -0px -800px;}
+    100%{animation: steps(2);
+        background-position: -400px -800px;}
+}
+
